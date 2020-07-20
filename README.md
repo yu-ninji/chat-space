@@ -14,29 +14,22 @@
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
+|name|string|null: false, unique: true|
 ### Association
-- has_many :posts
+- has_many :messages
 - has_many :comments
-
-
-## chatテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|text||
-|text|text||
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :comments
+- has_many :groups, through: :group_members
 
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|image|text||
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- has_many :comments
 
 
 ## groupsテーブル
