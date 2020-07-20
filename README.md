@@ -14,16 +14,15 @@
 |email|string|null: false|
 |password|string|null: false|
 |name|string|null: false,unique: true|
-|group_user|string|null: false,unique: true|
 ### Association
 - has_many :messages
 - has_many :groups, through: :group_users
-
+- has_many :group_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
 has_many :groups_users
 has_many :users, through: groups_users
