@@ -8,20 +8,7 @@
     = link_to'#', class: "edit" do
       Edit
   .messages
-    .messages__box1
-      .name
-        ninji
-      .date
-        2020年7月25日13時13分
-    .message
-      おはよう
-    .messages__box2
-      .name
-        masa
-      .date
-        2020年8月25日12時13分
-    .message
-      こんばんは
+    = render @messages
   .footer
     %form.form
       .message
@@ -30,3 +17,12 @@
           = icon('far','image')
           %input.image-file{"type": "file", "name": "message(image)" }
       %input.form__submit{"name": "commit", "type": "submit", "value": "Send"}
+
+  .Footer
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'

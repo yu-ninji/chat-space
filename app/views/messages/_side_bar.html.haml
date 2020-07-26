@@ -5,15 +5,22 @@
         = current_user.name
       .icon-bar
         .icon-list1
-          = link_to "#", class: "new-group" do
+          = link_to new_group_path, class: "new-group" do
             = icon('far','edit')
         .icon-list2
           = link_to edit_user_path(current_user), class: "edit-group" do
             = icon('fas','cog')
   .groups
-    .group1
-      .group-name techcamp
-      .group-message まだメッセージがありません
-    .group2
-      .group-name users
-      .group-message まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        .group1
+          = link_to group_messages_path(group) do
+            .group-name
+              = group.name
+            .group-message 
+              = group.show_last_message
+        .group2
+          .group-name 
+            users
+          .group-message 
+            まだメッセージがありません
