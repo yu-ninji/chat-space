@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper{
+  display: flex;
+}
+
+.side_bar{
+  width: 300px;
+  height: 100vh;
+  .side_header{
+    width: 300px;
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+  }
+  .groups{
+    width: 300px;
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    .group1{
+      font-weight: bold;
+      margin: 0 20px;
+      .group-name{
+        color: #ffffff;
+        font-size: 15px;
+        padding:20px 20px 5px 0;
+      }
+      .group-message{
+        color: #ffffff;
+        font-size: 11px;
+        border: 40px;
+      }
+    }
+    .group2{
+      font-weight: bold;
+      margin: 0 20px;
+      .group-name{
+        color: #ffffff;
+        font-size: 15px;
+        padding:20px 20px 5px 0;
+      }
+      .group-message{
+        color: #ffffff;
+        font-size: 11px;
+        border: 40px;
+      }
+    }
+  }
+}
+
+
+.side-box{
+  width: 260px;
+  height: 20px;
+  background-color: #253141;
+  margin: 0 20px;
+  display: flex;
+  justify-content:space-between;
+  .user-name{
+    font-size: 165pxpx;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .icon-bar {
+    width: 60px;
+    display: flex;
+    .icon-list1{
+      .new-group{
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+    .icon-list2{
+      margin-left: 5px;
+      .edit-group{
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+
+.main_chat{
+  width: calc(100vw - 300px);
+  height: 100vh;
+  .main-header{
+    width: calc(100vw - 300px);
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content:space-between;
+    padding: 0 40px;
+    &__box{
+      margin-top: 35px;
+      .group-name{
+        color: #333333;
+        font-size: 20px;
+      }
+      .member-list{
+        color: #999999;
+        font-size: 12px;
+        margin-top: 15px;
+      }
+    }
+    .edit{
+      border: solid 1px;
+      color: #38aef0;
+      height: 40px;
+      font-size: 16px;
+      margin-top: 30px;
+      padding: 0 20px;
+      text-decoration: none;
+      line-height: 40px;
+    }
+  }
+  .messages{
+    width: calc(100vw - 300px);
+    height: calc(100vh - 100px - 90px);
+    background-color: #fafafa;
+    padding: 0 0 0 40px;
+    &__box1{
+      padding-top: 35px;
+      display: flex;
+      .name{
+        font-size: 16px;
+        color: #333333;
+      }
+      .date{
+        font-size: 12px;
+        color: #999999;
+        padding-left: 10px;
+      }
+    }
+    .message{
+      font-size: 14px;
+      color: #434a54;
+      padding: 12px 0 0 0;
+    }
+    &__box2{
+      padding-top: 46px;
+      display: flex;
+      .name{
+        font-size: 16px;
+        color: #333333;
+      }
+      .date{
+        font-size: 12px;
+        color: #999999;
+        padding-left: 10px;
+      }
+    }
+    .message{
+      font-size: 14px;
+      color: #434a54;
+      padding: 12px 0 0 0;
+    }
+  }
+  .footer{
+    width: calc(100vw - 300px);
+    height: 90px;
+    background-color: #d2d2d2;
+    justify-content: space-between;
+    padding: 20px 50px 20px 40px;
+    .form{
+      display: flex;
+      justify-content: space-between;
+      .message{
+        display: flex;
+        width: 100%;
+        background-color: #fff;
+        position: relative;
+        .inputText{
+          border: none;
+          height: 50px;
+          width: 100%;
+          padding: 0 45px 0 15px;
+        }
+        .inputImage{
+          line-height: 50px;
+          font-size: 25px;
+          right: 10px;
+          position: absolute;
+          .image-file{
+            display: none;
+          }
+        }
+      }
+      &__submit{
+        background-color: #38aef0;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
+    }
+  }
+}
