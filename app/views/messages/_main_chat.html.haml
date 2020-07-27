@@ -2,27 +2,21 @@
   .main-header
     .main-header__box
       .group-name 
-        test
+        = @group.name
       .member-list 
-        member: masa
-    = link_to'#', class: "edit" do
+        Member:
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group), class: "edit" do
       Edit
   .messages
     = render @messages
+  
   .footer
-    %form.form
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .message
-        %input.inputText{"placeholder": "type a message", "type": "text"}
-        %label.inputImage
-          = icon('far','image')
-          %input.image-file{"type": "file", "name": "message(image)" }
-      %input.form__submit{"name": "commit", "type": "submit", "value": "Send"}
-
-  .Footer
-    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
-      .Form__contents
-        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
-        = f.label :image, class: 'Form__inputImage' do
+        = f.text_field :content, class: 'inputText', placeholder: 'type a message'
+        = f.label :image, class: 'inputImage' do
           = icon('far', 'image', class: 'Form__icon')
-          = f.file_field :image, class: 'Hidden'
-      = f.submit 'Send', class: 'Form__submit'
+          = f.file_field :image, class: 'image-file'
+      = f.submit 'Send', class: 'form__submit'
