@@ -22,20 +22,9 @@
     .group1{
       font-weight: bold;
       margin: 0 20px;
-      .group-name{
-        color: #ffffff;
-        font-size: 15px;
-        padding:20px 20px 5px 0;
+      a{
+        text-decoration: none;
       }
-      .group-message{
-        color: #ffffff;
-        font-size: 11px;
-        border: 40px;
-      }
-    }
-    .group2{
-      font-weight: bold;
-      margin: 0 20px;
       .group-name{
         color: #ffffff;
         font-size: 15px;
@@ -121,24 +110,27 @@
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 0 0 0 40px;
+    overflow: scroll;
     &__box1{
       padding-top: 35px;
-      display: flex;
-      .name{
-        font-size: 16px;
-        color: #333333;
+      .MessageInfo{
+        display: flex;
       }
-      .date{
-        font-size: 12px;
-        color: #999999;
-        padding-left: 10px;
+        .name{
+          font-size: 16px;
+          color: #333333;
+        }
+        .date{
+          font-size: 12px;
+          color: #999999;
+          padding-left: 10px;
+        }
+    }
+      .message{
+        font-size: 14px;
+        color: #434a54;
+        padding: 12px 0 0 0;
       }
-    }
-    .message{
-      font-size: 14px;
-      color: #434a54;
-      padding: 12px 0 0 0;
-    }
     &__box2{
       padding-top: 46px;
       display: flex;
